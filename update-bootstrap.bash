@@ -13,6 +13,12 @@ else
 fi
 [ -z "$get_method" ] && { echo "Neither wget nor curl found. Exiting..."; exit 1; }
 
+bootstrap_dir=$(pwd)"/bootstrap"
+
+[ -d "$bootstrap_dir" ] && rm -rf "$bootstrap_dir" && mkdir "$bootstrap_dir"
+mkdir -p "$bootstrap_dir"/css
+mkdir -p "$bootstrap_dir"/js
+
 # download a single file
 # $1 - url
 # $2 (optional) - directory where to download the file; default: current directory
@@ -23,19 +29,13 @@ function get_file()
     cd $dir
     case "$get_method" in
         "curl") curl -s --write-out "%{url_effective} %{http_code}\n" -O "$1" ;;
-        "wget") wget --no-verbose "$1" -O "$dir" ;;
+        "wget") wget --no-check-certificate --no-verbose "$1" --directory-prefix "$dir" ;;
     esac
     )
 }
 
-[ -d './bootstrap' ] && rm -rf './bootstrap'
+get_file "${remote}css/bootstrap.css" "$bootstrap_dir/css"
+get_file "${remote}css/bootstrap.min.css" "$bootstrap_dir/css"
 
-mkdir ./bootstrap
-
-mkdir ./bootstrap/css
-get_file "${remote}css/bootstrap.css" "bootstrap/css"
-get_file "${remote}css/bootstrap.min.css" "bootstrap/css"
-
-mkdir ./bootstrap/js
-get_file "${remote}js/bootstrap.js" "bootstrap/js"
-get_file "${remote}js/bootstrap.min.js" "bootstrap/js"
+get_file "${remote}js/bootstrap.js" "$bootstrap_dir/js"
+get_file "${remote}js/bootstrap.min.js" "$bootstrap_dir/js"
