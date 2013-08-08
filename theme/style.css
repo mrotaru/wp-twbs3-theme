@@ -12,3 +12,9 @@ License URI:
 
 General comments (optional).
 */
+@import url('bootstrap/css/bootstrap.css');
+
+body { 
+     padding-top: 60px; 
+     padding-bottom: 40px; 
+}
