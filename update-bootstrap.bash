@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # link to github repository
-remote="https://raw.github.com/twbs/bootstrap/3.0.0-wip/dist/"
+remote="https://raw.github.com/twbs/bootstrap/3.0.0-wip"
 
 # set download method - curl or wget
 command -v curl >/dev/null 2>&1
@@ -18,6 +18,7 @@ bootstrap_dir=$(pwd)"/bootstrap"
 [ -d "$bootstrap_dir" ] && rm -rf "$bootstrap_dir" && mkdir "$bootstrap_dir"
 mkdir -p "$bootstrap_dir"/css
 mkdir -p "$bootstrap_dir"/js
+mkdir -p "$bootstrap_dir"/assets/js
 
 # download a single file
 # $1 - url
@@ -34,8 +35,10 @@ function get_file()
     )
 }
 
-get_file "${remote}css/bootstrap.css" "$bootstrap_dir/css"
-get_file "${remote}css/bootstrap.min.css" "$bootstrap_dir/css"
+get_file "${remote}/dist/css/bootstrap.css" "$bootstrap_dir/css"
+get_file "${remote}/dist/css/bootstrap.min.css" "$bootstrap_dir/css"
 
-get_file "${remote}js/bootstrap.js" "$bootstrap_dir/js"
-get_file "${remote}js/bootstrap.min.js" "$bootstrap_dir/js"
+get_file "${remote}/dist/js/bootstrap.js" "$bootstrap_dir/js"
+get_file "${remote}/dist/js/bootstrap.min.js" "$bootstrap_dir/js"
+
+get_file "${remote}/assets/js/jquery.js" "$bootstrap_dir/assets/js"
