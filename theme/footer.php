@@ -1,25 +1,14 @@
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="{{ page.base_url }}assets/js/jquery.js"></script>
-<script src="{{ page.base_url }}dist/js/bootstrap.js"></script>
+        <footer class="bs-footer" role="contentinfo">
 
-<script src="http://platform.twitter.com/widgets.js"></script>
-<script src="{{ page.base_url }}assets/js/holder.js"></script>
+          <ul class="footer-links">
+            <li><a href="https://github.com/mihai-rotaru/wp-twbs3-theme">GitHub</a></li>
+            <li><a href="https://github.com/mihai-rotaru/wp-twbs3-theme/issues">Issues</a></li>
+          </ul>
 
-<script src="{{ page.base_url }}assets/js/application.js"></script>
-
-<!-- Analytics
-================================================== -->
-<script>
-  var _gauges = _gauges || [];
-  (function() {
-    var t   = document.createElement('script');
-    t.async = true;
-    t.id    = 'gauges-tracker';
-    t.setAttribute('data-site-id', '4f0dc9fef5a1f55508000013');
-    t.src = '//secure.gaug.es/track.js';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(t, s);
-  })();
-</script>
+            <!-- JS and analytics only. -->
+            <script src="./assets/js/jquery.js"></script>
+            <script src="./js/bootstrap.js"></script>
+        </footer>
+    </div><!-- /.container -->
+  </body>
+</html>
