@@ -2,6 +2,7 @@
 .ey_local_data
 latest.tar.gz
 wordpress/
+!puppet/modules/wordpress/
 bootstrap/
 notes.txt
 vendor/
