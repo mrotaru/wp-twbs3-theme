@@ -4,3 +4,5 @@ latest.tar.gz
 wordpress/
 bootstrap/
 notes.txt
+vendor/
+composer.lock
