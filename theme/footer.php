@@ -6,8 +6,8 @@
           </ul>
 
             <!-- JS and analytics only. -->
-            <script src="<?php echo get_template_directory();?>/bootstrap/assets/js/jquery.js"></script>
-            <script src="<?php echo get_template_directory();?>/bootstrap/js/bootstrap.js"></script>
+            <script src="<?php echo get_stylesheet_directory_uri();?>/bootstrap/assets/js/jquery.js"></script>
+            <script src="<?php echo get_stylesheet_directory_uri();?>/bootstrap/js/bootstrap.js"></script>
         </footer>
     </div><!-- /.container -->
   </body>
