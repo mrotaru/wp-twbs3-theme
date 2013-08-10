@@ -42,5 +42,10 @@ Vagrant::Config.run do |config|
      puppet.module_path = "puppet/modules"
      puppet.manifest_file  = "init.pp"
      puppet.options="--verbose --debug"
+     require 'rbconfig'
+     if (RbConfig::CONFIG['host_os'] =~ /mswin|mingw|cygwin/)
+         puppet.options << " --color=false"
+     end
+     
    end
 end
