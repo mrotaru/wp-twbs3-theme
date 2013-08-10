@@ -29,7 +29,7 @@ Vagrant::Config.run do |config|
   # Share an additional folder to the guest VM. The first argument is
   # an identifier, the second is the path on the guest to mount the
   # folder, and the third is the path on the host to the actual folder.
-  config.vm.share_folder "my-theme", "/vagrant/wordpress/wp-content/themes/my-theme", "./theme"
+  config.vm.share_folder "my-theme",  "/vagrant/wordpress/wp-content/themes/my-theme", "./theme"
   config.vm.share_folder "bootstrap", "/vagrant/wordpress/wp-content/themes/my-theme/bootstrap", "./bootstrap"
 
   # Enable provisioning with Puppet stand alone.  Puppet manifests
