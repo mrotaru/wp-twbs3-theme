@@ -22,8 +22,17 @@
 
     <div class="container">
 
-      <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+      <div class="wp-twbs-wrapper">
+
+        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+          <article>
+              <h2><a href="<?php the_permalink(); ?>" title="For More Info on <?php
+              the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+              <?php the_content(); ?>
+        </article>
+        <?php endwhile; else: ?>
+        <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+        <?php endif; ?>
       </div>
+
 <?php get_footer();?>
