@@ -7,3 +7,4 @@ bootstrap/
 notes.txt
 vendor/
 composer.lock
+theme/composer.json

@@ -8,7 +8,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Project name</a>
+        <a class="navbar-brand" href="<?php home_url();?>"><?php bloginfo('name');?></a>
     <?php 
     wp_nav_menu( array( 
                 'theme_location' => 'header-menu',
