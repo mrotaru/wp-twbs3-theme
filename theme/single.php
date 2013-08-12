@@ -33,17 +33,17 @@
                     <div class="entry-meta">
                         <?php //posted_on(); ?>
                     </div><!-- .entry-meta -->
-                    <?php endif; ?>
+                    <?php endif;
+                    echo "<p>Posted in ";
+                    the_category(', ');
+                    echo "</p>";
+                    ?>
                 </header><!-- .entry-header -->
 
                 <?php
                 //get_template_part( 'content', get_post_format() );
                 //get_template_part( 'content' );
-                //the_content('');
-                the_excerpt();
-                echo "<p>Posted in ";
-                the_category(', ');
-                echo "</p>";
+                the_content('');
                 ?>
         <?php endwhile; else: ?>
         <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
