@@ -45,6 +45,12 @@
                 //get_template_part( 'content' );
                 the_content('');
                 ?>
+<h3>Commentsdasds</h3>
+<ol class="commentlist">
+<?php //wp_list_comments( null, wp_list_comments()); ?>
+<?php ?>
+<?php comments_template(); ?>
+</ol>
         <?php endwhile; else: ?>
         <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
         <?php endif; ?>
