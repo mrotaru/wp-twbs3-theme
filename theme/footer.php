@@ -10,5 +10,6 @@
             <script src="<?php echo get_stylesheet_directory_uri();?>/bootstrap/js/bootstrap.js"></script>
         </footer>
     </div><!-- /.container -->
+    <?php wp_footer();?>
   </body>
 </html>

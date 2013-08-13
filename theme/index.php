@@ -1,24 +1,4 @@
-<?php require '../vendor/raveren/kint/Kint.class.php';?>
-
 <?php get_header();?>
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="<?php home_url();?>"><?php bloginfo('name');?></a>
-    <?php 
-    wp_nav_menu( array( 
-                'theme_location' => 'header-menu',
-                'container_class' => 'nav-collapse collapse',
-                'menu_class' => 'nav navbar-nav' 
-            )
-        );
-    ?>
-    </div>
-</div>
 
     <div class="container">
 
@@ -37,9 +17,6 @@
                 </header><!-- .entry-header -->
 
                 <?php
-                //get_template_part( 'content', get_post_format() );
-                //get_template_part( 'content' );
-                //the_content('');
                 the_excerpt();
                 echo "<p>Posted in ";
                 the_category(', ');
