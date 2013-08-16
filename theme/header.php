@@ -44,7 +44,8 @@
     wp_nav_menu( array( 
                 'theme_location' => 'header-menu',
                 'container_class' => 'nav-collapse collapse',
-                'menu_class' => 'nav navbar-nav' 
+                'menu_class' => 'nav navbar-nav' ,
+                'fallback_cb' => 'default_menu'
             )
         );
     ?>

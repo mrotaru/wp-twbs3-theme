@@ -1,5 +1,9 @@
 <?php
 
+function default_menu() {
+    echo '';
+}
+
 function my_css_attributes_filter($var) {
     if(is_array($var)){
         $varci= array_intersect($var, array('current-menu-item'));
