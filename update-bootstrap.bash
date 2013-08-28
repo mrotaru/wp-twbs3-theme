@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # link to github repository
-remote="https://raw.github.com/twbs/bootstrap/3.0.0-wip"
+remote="https://raw.github.com/twbs/bootstrap/master"
 
 # set download method - curl or wget
 command -v curl >/dev/null 2>&1
