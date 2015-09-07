@@ -1,23 +1,19 @@
-exec { "apt_update":
-  command => "apt-get update",
-  path    => "/usr/bin"
+exec { "apt-update":
+  command => "/usr/bin/apt-get update"
 }
 
-class{'git::install':}
-class{'apache2::install':}
-class{'php5::install':}  
-class{'mysql::install':}
-class{'wordpress::install':}
-include composer
-
-file { '/vagrant/wordpress/wp-content/themes/my-theme/composer.json':
-  ensure => file,
-  source => '/vagrant/composer.json',
-  require => Class['composer']
+class set_env($var, $value) {
+  file { "/etc/environment":
+    content => inline_template("${var}=${value}")
+  }
 }
 
-exec { 'get_composer_dependencies':
-  command => '/usr/local/bin/composer install',
-  cwd    => '/vagrant/wordpress/wp-content/themes/my-theme',
-  subscribe => File['/vagrant/wordpress/wp-content/themes/my-theme/composer.json']
-}
+Exec["apt-update"] -> Package <| |>
+
+package {'git': ensure => present } 
+package {'build-essential': ensure => present }
+
+import 'mysql.pp'
+import 'node.pp'
+import 'nginx.pp'
+import 'php.pp'
